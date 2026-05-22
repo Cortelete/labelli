@@ -1,0 +1,6 @@
+{
+  "name": "La Belli Master Hall",
+  "description": "Links and features for La Belli Master Hall",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
