@@ -33,11 +33,11 @@ export default function App() {
 
   useEffect(() => {
     if (isDarkMode) {
-      document.body.classList.add("bg-[#0a0a0a]", "text-neutral-100");
-      document.body.classList.remove("bg-[#f8fafc]", "text-neutral-900");
+      document.body.classList.add("bg-black", "text-neutral-100");
+      document.body.classList.remove("bg-white", "text-neutral-900", "bg-neutral-50");
     } else {
-      document.body.classList.add("bg-[#f8fafc]", "text-neutral-900");
-      document.body.classList.remove("bg-[#0a0a0a]", "text-neutral-100");
+      document.body.classList.add("bg-white", "text-neutral-900");
+      document.body.classList.remove("bg-black", "text-neutral-100", "bg-neutral-50");
     }
   }, [isDarkMode]);
 
