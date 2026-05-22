@@ -53,12 +53,12 @@ export default function App() {
         <ThemeToggle />
         <AnimatedBackground />
 
-        <main className="flex-1 w-full flex items-center justify-center p-2 sm:p-6 relative z-10 py-2 sm:py-10">
+        <main className="flex-1 w-full flex items-center justify-center p-2 sm:p-0 relative z-10 py-2 sm:py-0">
           <div
-            className={`w-full max-w-md backdrop-blur-xl border rounded-xl sm:rounded-2xl relative overflow-hidden flex flex-col items-center my-auto aspect-[auto] max-h-[95dvh] justify-center transition-colors duration-700 ${
+            className={`w-full max-w-md sm:max-w-none sm:h-[100dvh] backdrop-blur-xl border sm:border-0 rounded-xl sm:rounded-none relative overflow-hidden flex flex-col items-center justify-center transition-colors duration-700 ${
               isDarkMode
-                ? "bg-neutral-900/40 border-neutral-800/60 shadow-2xl"
-                : "bg-white/60 border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+                ? "bg-neutral-900/40 border-neutral-800/60 shadow-none sm:shadow-2xl"
+                : "bg-white/60 border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] sm:shadow-none"
             }`}
           >
             {/* Watermark/Background Image for the Card */}
@@ -85,11 +85,11 @@ export default function App() {
             <div
               className={`relative z-10 w-full h-full overflow-y-auto px-4 py-6 sm:p-8 flex flex-col items-center ${isDarkMode ? "custom-scrollbar" : "custom-scrollbar-light"}`}
             >
-              <div className="w-full mb-1 sm:mb-2">
+              <div className="w-full sm:max-w-3xl mb-1 sm:mb-6">
                 <Profile onLogoClick={() => setActiveModal("sobre")} />
               </div>
 
-              <div className="flex flex-col gap-2 sm:gap-3.5 mt-1 sm:mt-6 w-full">
+              <div className="flex flex-col gap-2 sm:gap-4 mt-1 sm:mt-6 w-full sm:max-w-3xl sm:grid sm:grid-cols-2 lg:grid-cols-2">
                 <LinkButton
                   title="Eventos & Ingressos"
                   subtitle="Garanta seu lugar nos melhores shows"
@@ -122,16 +122,18 @@ export default function App() {
                   delay={0.7}
                 />
 
-                <LinkButton
-                  title="Avalie seu Momento"
-                  subtitle="Sua opinião é valiosa para nós"
-                  icon={<Star className="w-4 h-4 sm:w-6 sm:h-6" />}
-                  onClick={() => setActiveModal("avaliacao")}
-                  delay={0.8}
-                />
+                <div className="sm:col-span-2 lg:max-w-md lg:mx-auto w-full">
+                  <LinkButton
+                    title="Avalie seu Momento"
+                    subtitle="Sua opinião é valiosa para nós"
+                    icon={<Star className="w-4 h-4 sm:w-6 sm:h-6" />}
+                    onClick={() => setActiveModal("avaliacao")}
+                    delay={0.8}
+                  />
+                </div>
               </div>
 
-              <div className="relative flex justify-center w-full mt-1 sm:mt-4 pb-2">
+              <div className="relative flex justify-center w-full mt-1 sm:mt-10 pb-2">
                 <Footer onDevClick={() => setActiveModal("dev")} />
               </div>
             </div>
